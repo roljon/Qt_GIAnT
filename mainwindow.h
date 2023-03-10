@@ -16,12 +16,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QWidget *frame_mute_buttons;
-    MutingButton *mute_buttons[8];
-    MutingButton *single_buttons[8];
-    QLabel *ch_labels[8];
+    QWidget *frame_mute_buttons, *frame_loadsave_buttons;
+    MutingButton *mute_buttons[8], *single_buttons[8];
+    QPushButton *load_button, *save_button, *sad_button;
+    QLabel *ch_labels[8], *current_time_label, *total_time_label, *current_time, *total_time;
+    QWidget *frame_current_time, *frame_total_time;
 
     void updateMutings();
+    void LoadProject();
+    void SaveProject();
+    void RunSAD();
 
 private slots:
 
